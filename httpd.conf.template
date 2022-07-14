@@ -1,0 +1,23 @@
+# Settings to add to C:/Apache24/conf/httpd.conf
+
+ServerName 125.178.47.44:80
+
+
+# Django Project
+LoadFile "C:/Users/jungc/anaconda3/python39.dll"
+LoadModule wsgi_module "C:/Users/jungc/anaconda3/lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+WSGIPythonHome "C:/Users/jungc/anaconda3"
+
+WSGIScriptAlias / "C:/Python/djangoProject1/djangoProject1/wsgi.py"
+WSGIPythonPath "C:/Python/djangoProject1/"
+
+<Directory "C:/Python/djangoProject1/djangoProject1/">
+  <Files wsgi.py>
+    Require all granted
+  </Files>
+</Directory>
+
+Alias /static "C:/Python/djangoProject1/static/"
+<Directory "C:/Python/djangoProject1/static/">
+    Require all granted
+</Directory>
